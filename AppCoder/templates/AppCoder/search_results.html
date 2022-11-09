@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+</head>
+<body style="text-align:center">
+    
+
+    {% if courses %}
+    <p> Se esta buscando la comision: {{commission}}</p>
+    
+
+    <ul>
+        {% for course in courses %}
+            <p> -----------------------------------------</p>
+            <li> Nombre del curso: {{course.nombre}} </li>
+            <li> Comision: {{course.comision}} </li>
+            <p> -----------------------------------------</p>
+        {% endfor %}
+    </ul>
+
+    {% else %}
+    <p> No hay datos con esa descripción</p>
+    {% endif %}
+
+</body>
+</html>

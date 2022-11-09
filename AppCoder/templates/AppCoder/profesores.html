@@ -1,0 +1,26 @@
+{% extends "AppCoder/padre.html" %}
+{% load static %}
+{% block contenidoquecambia %}
+
+<!-- Puesto en la clase 22 -->
+    <h1 style="text-align:center">Guardador de profesores</h1>
+    <h1 style="text-align:center">--------------------------------</h1>
+
+    {% if form.errors %}
+
+    <p style="color: red;"> Estan mal los datos, revisar </p>> 
+    
+    {% endif %}
+
+    <form style="text-align:center" action="profesores" method="POST"> {% csrf_token %}
+        <table ALIGN="center">
+
+            {{form.as_table}}
+
+        </table>
+
+        <input type="submit", value="Enviar">
+
+    </form>
+
+{% endblock %}
